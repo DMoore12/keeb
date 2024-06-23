@@ -222,9 +222,19 @@ inline bool PHAL_readGPIO(GPIO_TypeDef *bank, uint8_t pin)
     return (bank->IDR >> pin) & 0b1;
 }
 
+inline uint32_t PHAL_readGPIOBank(GPIO_TypeDef* bank)
+{
+    return bank->IDR;
+}
+
 inline void PHAL_writeGPIO(GPIO_TypeDef *bank, uint8_t pin, bool value)
 {
     bank->BSRR |= 1 << (pin + (16 * (!value))); // BSRR has "set" as bottom 16 bits and "reset" as top 16
+}
+
+inline void PHAL_writeGPIOBank(GPIO_TypeDef *bank, uint32_t value)
+{
+    bank->ODR = value;
 }
 
 inline void PHAL_toggleGPIO(GPIO_TypeDef *bank, uint8_t pin)

@@ -84,20 +84,4 @@ define_property(TARGET PROPERTY OUTPUT_DIR
 include(cmake/common_component.cmake)
 
 # Add Components
-add_subdirectory(source/main_module)
-add_subdirectory(source/bootloader)
-add_subdirectory(source/l4_testing)
-add_subdirectory(source/f4_testing)
-add_subdirectory(source/f7_testing)
-add_subdirectory(source/a_box)
-add_subdirectory(source/torque_vector)
-add_subdirectory(source/dashboard)
-add_subdirectory(source/pdu)
-add_subdirectory(source/daq)
-
-
-# Deprecated Components
-# add_subdirectory(source/driveline)
-# add_subdirectory(source/torque_vector_fpga)
-# add_subdirectory(source/template)
-# add_subdirectory(source/bms)
+add_subdirectory(source/keeb)

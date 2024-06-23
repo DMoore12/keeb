@@ -55,4 +55,6 @@
 #define HSI_TRIM_DAQ			17
 #define HSI_TRIM_A_BOX			16
 
+#define COUNTER(cnt, max) (cnt = (cnt >= (max - 1)) ? 0 : cnt + 1)
+
 #endif /* COMMON_DEFS_H_ */
